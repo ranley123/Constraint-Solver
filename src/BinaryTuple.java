@@ -8,6 +8,14 @@ public final class BinaryTuple {
     val1 = v1 ;
     val2 = v2 ;
   }
+
+  public int getVal1(){
+    return val1;
+  }
+
+  public int getVal2(){
+    return val2;
+  }
   
   public String toString() {
     return "<"+val1+", "+val2+">" ;
