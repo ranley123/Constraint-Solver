@@ -1,7 +1,6 @@
 import java.util.LinkedHashSet;
 
 public class MaintainingArcConsistency extends Solver{
-
     public MaintainingArcConsistency(BinaryCSP csp) {
         super(csp);
     }
@@ -11,13 +10,9 @@ public class MaintainingArcConsistency extends Solver{
         LinkedHashSet<Arc> queue = new LinkedHashSet<>();
         for(Variable futureVar: future){
             if(csp.hasConstraint(futureVar, variable)){
-//                System.out.println(csp.getConstraintMap());
-
                 queue.add(new Arc(futureVar, variable));
             }
         }
-//        System.out.println("future vars: " + future);
-//        System.out.println(queue);
 
         while(!queue.isEmpty()){
             Arc arc = getNextArc(queue);

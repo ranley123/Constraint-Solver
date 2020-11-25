@@ -1,7 +1,4 @@
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
+import java.util.*;
 
 public abstract class Solver {
     BinaryCSP csp;
@@ -10,7 +7,7 @@ public abstract class Solver {
     private int revisionTimes = 0;
     protected HashSet<Variable> past = new HashSet<>();
     protected HashSet<Variable> future = new HashSet<>();
-    protected LinkedHashMap<Integer, Integer> solution = new LinkedHashMap<>();
+    public ArrayList<LinkedHashMap<Integer, Integer>> solutions = new ArrayList<>();
 
     public long getSolutionTime(){
         return solutionTime;
@@ -40,14 +37,16 @@ public abstract class Solver {
         return future.iterator().next();
     }
 
-    public LinkedHashMap<Integer, Integer> run(){
+    public void run(){
         long start = System.currentTimeMillis();
-
-        LinkedHashMap<Integer, Integer> solution = solve();
-
+        solve();
         long end = System.currentTimeMillis();
         solutionTime = end - start;
-        return solution;
+        printStats();
+
+        for(LinkedHashMap<Integer, Integer> solution: solutions){
+//            printSolution(solution);
+        }
     }
 
     protected void assign(Variable variable, int value){
@@ -57,16 +56,7 @@ public abstract class Solver {
     }
 
     protected boolean completeAssignment(){
-        if(future.isEmpty()){
-            // update solution
-            solution.clear();
-            for(Variable pastVar: past){
-                solution.put(pastVar.getId(), pastVar.getValue());
-            }
-
-            return true;
-        }
-        return false;
+        return future.isEmpty();
     }
 
 
@@ -115,7 +105,7 @@ public abstract class Solver {
             solve();
         }
         else{
-            System.out.println("domain inconsistent!");
+//            System.out.println("domain inconsistent!");
         }
 
         for(Pruning pruning: prunings){
@@ -128,33 +118,44 @@ public abstract class Solver {
         future = csp.getVariables();
     }
 
-    public LinkedHashMap<Integer, Integer> solve() {
+    public void solve() {
+        increaseNumberOfNodes();
         if(completeAssignment()){
-            printSolution();
-            return solution;
+            LinkedHashMap<Integer, Integer> solution = new LinkedHashMap<>();
+            for(Variable pastVar: past){
+                solution.put(pastVar.getId(), pastVar.getValue());
+            }
+//            printSolution();
+            solutions.add(solution);
+            return;
         }
 
         // when get the next variable:
         // 1. ascending variable order
         // 2. smallest domain value
-        Variable nextVar = getNextVariable();
-//        Variable nextVar = getSmallestDomainVariable();
+//        Variable nextVar = getNextVariable();
+        Variable nextVar = getSmallestDomainVariable();
 
         int value = nextVar.getNextValue();
 //        System.out.println("Node: " + nextVar + " -> " + value);
 
         branchLeft(nextVar, value);
         branchRight(nextVar, value);
-
-        return null;
     }
 
     protected abstract boolean reviseFutureArcs(Variable variable, LinkedHashSet<Pruning> prunings);
 
-    public void printSolution(){
+    public void printSolution(LinkedHashMap<Integer, Integer> solution){
+        System.out.println("------------Solution----------");
         for(Map.Entry<Integer, Integer> entry: solution.entrySet()){
             System.out.println("Var " + entry.getKey() + ": " + entry.getValue());
         }
+    }
+
+    public void printStats(){
+        System.out.println("Solution Time (ms): " + solutionTime);
+        System.out.println("Nodes: " + numberOfNodes);
+        System.out.println("Arc Revisions: " + revisionTimes);
     }
 
 }
