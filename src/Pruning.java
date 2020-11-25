@@ -18,6 +18,10 @@ public class Pruning {
         }
     }
 
+    public boolean isChanged(){
+        return removedValues.size() > 0;
+    }
+
     @Override
     public boolean equals(Object o){
         if(!(o instanceof Pruning))

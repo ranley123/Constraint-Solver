@@ -4,7 +4,7 @@ public class Main {
         String cspFilename = args[0];
         BinaryCSPReader reader = new BinaryCSPReader();
         BinaryCSP csp = reader.readBinaryCSP(cspFilename);
-        Solver solver = getSolver("fc", csp);
+        Solver solver = getSolver("ac", csp);
         solver.solve();
 //        System.out.println(csp);
     }

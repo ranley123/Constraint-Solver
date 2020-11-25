@@ -75,4 +75,12 @@ public final class BinaryCSP {
     }
     return vars;
   }
+
+  public boolean hasConstraint(Variable var1, Variable var2){
+    int id1 = var1.getId();
+    int id2 = var2.getId();
+    BinaryConstraint one = getConstraint(id1, id2);
+    BinaryConstraint two = getConstraint(id2, id1);
+    return one != null || two != null;
+  }
 }

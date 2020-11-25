@@ -34,7 +34,10 @@ public class Arc {
 
             supported = two.getSecondVarSupported(supporterDomain);
         }
+//        System.out.println("before " + dependent);
         removed = dependent.remainValues(supported);
+//        System.out.println("after " + dependent);
+
         Pruning pruning = new Pruning(dependent, removed);
         return pruning;
     }

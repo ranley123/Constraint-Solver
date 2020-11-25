@@ -70,7 +70,7 @@ public class Variable {
             int value = iterator.next();
             if(!supportedValues.contains(value)){
                 iterator.remove();
-                removed.add(value);
+                removed.add(value); // update the domain
             }
         }
         return removed;
