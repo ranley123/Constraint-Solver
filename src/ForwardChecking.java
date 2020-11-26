@@ -9,6 +9,9 @@ public class ForwardChecking extends Solver{
         for(Variable futureVar: future){
             if(futureVar.equals(variable))
                 continue;
+            if(!csp.hasConstraint(futureVar, variable)){
+                continue;
+            }
             Arc arc = new Arc(futureVar, variable);
             increaseRevisionTimes();
             Pruning pruning = arc.prune(csp);
