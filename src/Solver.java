@@ -65,8 +65,8 @@ public abstract class Solver {
         // when get the next variable:
         // 1. ascending variable order
         // 2. smallest domain value
-//        Variable nextVar = getNextVariable();
-        Variable nextVar = getSmallestDomainVariable();
+        Variable nextVar = getNextVariable();
+//        Variable nextVar = getSmallestDomainVariable();
 
         int value = nextVar.getNextValue();
 //        System.out.println("Node: " + nextVar + " -> " + value);
