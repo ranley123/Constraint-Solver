@@ -17,27 +17,34 @@ public class Arc {
         return supporter;
     }
 
+    /**
+     * An Arc can be pruned
+     * @param csp
+     * @return
+     */
     public Pruning prune(BinaryCSP csp){
         LinkedHashSet<Integer> supporterDomain = supporter.getDomain();
-        LinkedHashSet<Integer> supported;
+        LinkedHashSet<Integer> supported; // supported values
         LinkedHashSet<Integer> removed;
 
+        // Since in the constraintMap, the var1 id is less than var2 id
+        // when dependent id < supporter id, then one
         BinaryConstraint one = csp.getConstraint(dependent.getId(), supporter.getId());
+        // when dependent id > supporter id, then two
         BinaryConstraint two = csp.getConstraint(supporter.getId(), dependent.getId());
 
+        // get the correponding supported values from domain
         if(one != null){
             supported = one.getFirstVarSupported(supporterDomain);
         }
         else{
-//            System.out.println(dependent.getId());
-//            System.out.println(supporter.getId());
-
             supported = two.getSecondVarSupported(supporterDomain);
         }
-//        System.out.println("before " + dependent);
-        removed = dependent.remainValues(supported);
-//        System.out.println("after " + dependent);
 
+        // find the values to be removed
+        removed = dependent.remainValues(supported);
+
+        // build a new pruning to hold removed values
         Pruning pruning = new Pruning(dependent, removed);
         return pruning;
     }

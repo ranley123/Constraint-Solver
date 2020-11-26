@@ -3,6 +3,7 @@ import java.util.* ;
 public final class BinaryCSP {
   private int[][] domainBounds ;
   private ArrayList<BinaryConstraint> constraints ;
+  // mapping from variable 1 and variable 2 to corresponding constraints
   private LinkedHashMap<Integer, LinkedHashMap<Integer, BinaryConstraint>> constraintMap;
   
   public BinaryCSP(int[][] db, ArrayList<BinaryConstraint> c) {
@@ -24,6 +25,12 @@ public final class BinaryCSP {
     }
   }
 
+  /**
+   * Return the constraint which has var1 and var2
+   * @param var1Id  - the first variable it contains
+   * @param var2Id  - the second variable it contains
+   * @return        - the constraint
+   */
   public BinaryConstraint getConstraint(Integer var1Id, Integer var2Id){
     if(!constraintMap.containsKey(var1Id)){
       return null;
@@ -61,6 +68,10 @@ public final class BinaryCSP {
     return constraints ;
   }
 
+  /**
+   * Based on domainBounds, construct a set of variables
+   * @return
+   */
   public HashSet<Variable> getVariables(){
     HashSet<Variable> vars = new HashSet<>();
     for(int i = 0; i < domainBounds.length; i++){
@@ -68,6 +79,7 @@ public final class BinaryCSP {
       int lowerBound = getLB(i);
       int upperBound = getUB(i);
 
+      // add domain
       for(int j = lowerBound; j <= upperBound; j++){
         var.addToDomain(j);
       }
@@ -76,6 +88,12 @@ public final class BinaryCSP {
     return vars;
   }
 
+  /**
+   * check if there is a constraint
+   * @param var1
+   * @param var2
+   * @return
+   */
   public boolean hasConstraint(Variable var1, Variable var2){
     int id1 = var1.getId();
     int id2 = var2.getId();

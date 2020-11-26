@@ -30,10 +30,8 @@ public class Eval {
                 System.out.println("Running: " + filename);
                 csp = reader.readBinaryCSP("./examples/" + filename);
                 for(String solverName: solvers){
-                    for(int i = 1; i < 3; i++){
-                        writer.write(filename + " ");
-                        start(csp, writer, solverName, i);
-                    }
+                    writer.write(filename + " ");
+                    start(csp, writer, solverName, 2);
                 }
             }
 

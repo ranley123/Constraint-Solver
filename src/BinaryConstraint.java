@@ -13,6 +13,11 @@ public final class BinaryConstraint {
   public int getFirstVar(){return firstVar;}
   public int getSecondVar(){return secondVar;}
 
+  /**
+   * Given a domain for the second variable, find corresponding valid first variables
+   * @param domain
+   * @return
+   */
   public LinkedHashSet<Integer> getFirstVarSupported(LinkedHashSet<Integer> domain){
     LinkedHashSet<Integer> res = new LinkedHashSet<>();
     for(BinaryTuple tuple: tuples){
@@ -23,6 +28,11 @@ public final class BinaryConstraint {
     return res;
   }
 
+  /**
+   * Given a domain for the first variable, find corresponding valid second variables
+   * @param domain
+   * @return
+   */
   public LinkedHashSet<Integer> getSecondVarSupported(LinkedHashSet<Integer> domain){
     LinkedHashSet<Integer> res = new LinkedHashSet<>();
     for(BinaryTuple tuple: tuples){
@@ -40,6 +50,4 @@ public final class BinaryConstraint {
       result.append(bt+"\n") ;
     return result.toString() ;
   }
-  
-  // SUGGESTION: You will want to add methods here to reason about the constraint
 }
