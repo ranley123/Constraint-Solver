@@ -14,19 +14,27 @@ public class Eval {
         HashSet<String> files = new HashSet<>();
         BinaryCSPReader reader = new BinaryCSPReader();
         BinaryCSP csp;
+        HashSet<String> solvers = new HashSet<>();
+
+        solvers.add("fc");
+        solvers.add("mac");
+
 
         try{
-            //files = listFiles("./examples");
-            files.add("FinnishSudoku.csp");
+            files = listFiles("./examples");
+//            files.add("4Queens.csp");
             writer = new FileWriter(output);
+            writer.write("filename solver variableOrder solutionTime(ms) nodes revisions\n");
 
             for(String filename: files){
+                System.out.println("Running: " + filename);
                 csp = reader.readBinaryCSP("./examples/" + filename);
-                writer.write(filename + " ");
-                start(csp, writer, "fc", 1);
-                start(csp, writer, "fc", 2);
-                start(csp, writer, "mac", 1);
-                start(csp, writer, "mac", 2);
+                for(String solverName: solvers){
+                    for(int i = 1; i < 3; i++){
+                        writer.write(filename + " ");
+                        start(csp, writer, solverName, i);
+                    }
+                }
             }
 
             writer.flush();
