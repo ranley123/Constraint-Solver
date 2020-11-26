@@ -49,16 +49,37 @@ public abstract class Solver {
         }
     }
 
+
+    public void solve() {
+        increaseNumberOfNodes();
+        if(completeAssignment()){
+            LinkedHashMap<Integer, Integer> solution = new LinkedHashMap<>();
+            for(Variable pastVar: past){
+                solution.put(pastVar.getId(), pastVar.getValue());
+            }
+//            printSolution();
+            solutions.add(solution);
+            return;
+        }
+
+        // when get the next variable:
+        // 1. ascending variable order
+        // 2. smallest domain value
+//        Variable nextVar = getNextVariable();
+        Variable nextVar = getSmallestDomainVariable();
+
+        int value = nextVar.getNextValue();
+//        System.out.println("Node: " + nextVar + " -> " + value);
+
+        branchLeft(nextVar, value);
+        branchRight(nextVar, value);
+    }
+
     protected void assign(Variable variable, int value){
         variable.assign(value);
         past.add(variable);
         future.remove(variable);
     }
-
-    protected boolean completeAssignment(){
-        return future.isEmpty();
-    }
-
 
     protected void unassign(Variable variable){
         variable.unassign();
@@ -82,6 +103,11 @@ public abstract class Solver {
             propagate(variable);
         }
         variable.addToDomain(value);
+    }
+
+
+    protected boolean completeAssignment(){
+        return future.isEmpty();
     }
 
     protected Variable getSmallestDomainVariable(){
@@ -118,30 +144,6 @@ public abstract class Solver {
         future = csp.getVariables();
     }
 
-    public void solve() {
-        increaseNumberOfNodes();
-        if(completeAssignment()){
-            LinkedHashMap<Integer, Integer> solution = new LinkedHashMap<>();
-            for(Variable pastVar: past){
-                solution.put(pastVar.getId(), pastVar.getValue());
-            }
-//            printSolution();
-            solutions.add(solution);
-            return;
-        }
-
-        // when get the next variable:
-        // 1. ascending variable order
-        // 2. smallest domain value
-//        Variable nextVar = getNextVariable();
-        Variable nextVar = getSmallestDomainVariable();
-
-        int value = nextVar.getNextValue();
-//        System.out.println("Node: " + nextVar + " -> " + value);
-
-        branchLeft(nextVar, value);
-        branchRight(nextVar, value);
-    }
 
     protected abstract boolean reviseFutureArcs(Variable variable, LinkedHashSet<Pruning> prunings);
 

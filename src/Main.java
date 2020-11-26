@@ -9,6 +9,12 @@ public class Main {
 //        System.out.println(csp);
     }
 
+    /**
+     *
+     * @param solverName
+     * @param csp
+     * @return
+     */
     public static Solver getSolver(String solverName, BinaryCSP csp){
         switch (solverName){
             case "fc":
