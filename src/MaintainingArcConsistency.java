@@ -28,7 +28,8 @@ public class MaintainingArcConsistency extends Solver{
         // process until there is no updated Arc to be processed
         while(!queue.isEmpty()){
             // get the next Arc in the queue
-            Arc arc = getNextArc(queue);
+            Arc arc = queue.iterator().next();
+            queue.remove(arc);
             increaseRevisionTimes();
 
             // prune the Arc and record pruning information for further undoing
@@ -58,16 +59,5 @@ public class MaintainingArcConsistency extends Solver{
             }
         }
         return true;
-    }
-
-    /**
-     * Get the next Arc
-     * @param queue - the queue containing all Arcs to be checked
-     * @return      - the next Arc
-     */
-    private Arc getNextArc(LinkedHashSet<Arc> queue){
-        Arc arc = queue.iterator().next();
-        queue.remove(arc);
-        return arc;
     }
 }

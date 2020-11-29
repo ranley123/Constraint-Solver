@@ -8,6 +8,7 @@ public abstract class Solver {
     protected HashSet<Variable> past = new HashSet<>(); // the past variables already assigned
     protected HashSet<Variable> future = new HashSet<>(); // the future variables to be assigned
     public ArrayList<LinkedHashMap<Integer, Integer>> solutions = new ArrayList<>(); // solutions
+    long start;
 
     /**
      * @return  - solution time
@@ -67,7 +68,7 @@ public abstract class Solver {
         numberOfNodes = 0;
         revisionTimes = 0;
 
-        long start = System.currentTimeMillis();
+        start = System.currentTimeMillis();
         solve(); // solve problem
         long end = System.currentTimeMillis();
         solutionTime = end - start;
@@ -93,6 +94,12 @@ public abstract class Solver {
             }
             // add the current solution
             solutions.add(solution);
+            long end = System.currentTimeMillis();
+            solutionTime = end - start;
+
+            printSolution(solution);
+            printStats();
+            System.exit(0);
             return;
         }
 
@@ -100,12 +107,12 @@ public abstract class Solver {
         // 1. ascending variable order
         // 2. smallest domain value
         Variable nextVar = null;
-//        if(Main.variableOrder == 1){
+        if(Main.variableOrder == 1){
             nextVar = getNextVariable();
-//        }
-//        else{
-//            nextVar = getSmallestDomainVariable();
-//        }
+        }
+        else{
+            nextVar = getSmallestDomainVariable();
+        }
 
         // ascending value ordering
         int value = nextVar.getNextValue();

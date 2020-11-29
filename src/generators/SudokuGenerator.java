@@ -1,3 +1,5 @@
+package generators;
+
 public final class SudokuGenerator {
   
   /**

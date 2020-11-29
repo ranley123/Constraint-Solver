@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aae95f65-e372-4bfa-8b1e-f0f836a205c8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Constraint-Solver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practical2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eval.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/Arc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/BinaryCSP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/BinaryCSPReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/BinaryConstraint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/BinaryTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/ForwardChecking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/LangfordsGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/MaintainingArcConsistency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/Pruning.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/QueensGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/Solver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/SudokuGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Constraint-Solver/Variable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/Arc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/BinaryCSP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/BinaryCSPReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/BinaryConstraint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/BinaryTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/Eval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/ForwardChecking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/LangfordsGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/MaintainingArcConsistency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/Pruning.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/QueensGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/Solver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/SudokuGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/Variable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practical2/plot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryConstraint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eval.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaintainingArcConsistency.java" beforeDir="false" afterPath="$PROJECT_DIR$/MaintainingArcConsistency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/LangfordsGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/generators/LangfordsGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/QueensGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/generators/QueensGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/SudokuGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/generators/SudokuGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1krmi80hn5DArSSCDzX9IBWSh4m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aae95f65-e372-4bfa-8b1e-f0f836a205c8" name="Default Changelist" comment="" />
+      <created>1606467208470</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606467208470</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606467214421">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1606467214421" />
+  </component>
+</project>
